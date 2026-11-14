@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA Arquitetura | Arquitetura & Design de Interiores</title>
+  <meta name="description" content="AURA Arquitetura: escritório de arquitetura e design de interiores contemporâneo. Espaços que inspiram vivências autênticas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+  <!-- Cursor personalizado: double dot -->
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" id="logo" aria-label="AURA Arquitetura - início">
+        <span class="logo__mark">A</span>
+        <span class="logo__text">
+          <strong>AURA</strong>
+          <small>ARQUITETURA</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list" id="navList">
+          <li><a href="#inicio" class="nav__link is-active" data-section="inicio">Início</a></li>
+          <li><a href="#projetos" class="nav__link" data-section="projetos">Projetos</a></li>
+          <li><a href="#sobre" class="nav__link" data-section="sobre">Sobre</a></li>
+          <li><a href="#processo" class="nav__link" data-section="processo">Processo</a></li>
+          <li><a href="#feedback" class="nav__link" data-section="feedback">Feedback</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contato" class="btn btn--dark btn--sm header__cta" id="headerCta">INICIAR PROJETO</a>
+
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__overlay"></div>
+
+      <div class="container hero__content" id="heroContent">
+        <span class="badge reveal" id="heroBadge"><i class="fa-solid fa-compass-drafting"></i> ARQUITETURA & DESIGN DE INTERIORES</span>
+        <h1 class="hero__title reveal" id="heroTitle" data-delay="100">Espaços que inspiram<br>vivências autênticas.</h1>
+        <p class="hero__text reveal" id="heroText" data-delay="200">Projetamos ambientes residenciais e comerciais onde a precisão técnica encontra o acolhimento, respeitando a identidade de quem os habita.</p>
+        <div class="hero__actions reveal" id="heroActions" data-delay="300">
+          <a href="#projetos" class="btn btn--outline" id="btnExplorar">EXPLORAR PROJETOS</a>
+          <a href="#processo" class="link-arrow" id="linkMetodo">Conheça nosso método <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <a href="#marquee" class="scroll-cue" id="scrollCue" aria-label="Rolar para baixo">
+        <span>ROLAR</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </section>
+
+    <!-- FAIXA MÓVEL -->
+    <section class="marquee" id="marquee" aria-label="Especialidades">
+      <div class="marquee__track" id="marqueeTrack">
+        <ul class="marquee__group" id="marqueeGroupA">
+          <li><i class="fa-solid fa-diamond"></i> ARQUITETURA CONTEMPORÂNEA</li>
+          <li><i class="fa-solid fa-diamond"></i> DESIGN DE INTERIORES</li>
+          <li><i class="fa-solid fa-diamond"></i> SUSTENTABILIDADE & EFICIÊNCIA</li>
+          <li><i class="fa-solid fa-diamond"></i> DETALHAMENTO EXECUTIVO IMPECÁVEL</li>
+          <li><i class="fa-solid fa-diamond"></i> ILUMINAÇÃO NATURAL</li>
+        </ul>
+        <ul class="marquee__group" id="marqueeGroupB" aria-hidden="true">
+          <li><i class="fa-solid fa-diamond"></i> ARQUITETURA CONTEMPORÂNEA</li>
+          <li><i class="fa-solid fa-diamond"></i> DESIGN DE INTERIORES</li>
+          <li><i class="fa-solid fa-diamond"></i> SUSTENTABILIDADE & EFICIÊNCIA</li>
+          <li><i class="fa-solid fa-diamond"></i> DETALHAMENTO EXECUTIVO IMPECÁVEL</li>
+          <li><i class="fa-solid fa-diamond"></i> ILUMINAÇÃO NATURAL</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="section projects" id="projetos">
+      <div class="container">
+        <div class="section__head section__head--split">
+          <div class="reveal" id="projetosHeadLeft">
+            <span class="eyebrow" id="projetosEyebrow">PORTFÓLIO SELECIONADO</span>
+            <h2 class="section__title" id="projetosTitle">Projetos que dialogam com a vida</h2>
+          </div>
+          <p class="section__lead reveal" id="projetosLead" data-delay="150">Cada projeto é um estudo detalhado de luz, matéria e proporção, pensado especificamente para a rotina e os desejos de cada cliente.</p>
+        </div>
+
+        <div class="projects__grid" id="projectsGrid">
+          <article class="card project-card reveal" id="projeto-horizonte" data-delay="0">
+            <div class="project-card__media">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80" alt="Casa Horizonte, residência com concreto aparente e paisagismo nativo" loading="lazy">
+              <span class="tag">RESIDENCIAL</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span><i class="fa-solid fa-location-dot"></i> São Paulo, SP</span><span><i class="fa-solid fa-ruler-combined"></i> 480 m²</span></div>
+              <h3 class="project-card__title">Casa Horizonte</h3>
+              <p class="project-card__text">Integração total entre interior e paisagismo nativo com elementos de concreto aparente e muxarabis de madeira.</p>
+              <div class="project-card__footer">
+                <span class="project-card__year">CONCLUÍDO EM 2024</span>
+                <a href="#contato" class="btn btn--outline btn--xs">Ver detalhes</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal" id="projeto-alameda" data-delay="150">
+            <div class="project-card__media">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Apartamento Alameda com cozinha gourmet integrada ao living" loading="lazy">
+              <span class="tag">INTERIORES</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span><i class="fa-solid fa-location-dot"></i> Curitiba, PR</span><span><i class="fa-solid fa-ruler-combined"></i> 210 m²</span></div>
+              <h3 class="project-card__title">Apartamento Alameda</h3>
+              <p class="project-card__text">Reconfiguração espacial completa valorizando a iluminação natural e fluidez entre cozinha gourmet e living.</p>
+              <div class="project-card__footer">
+                <span class="project-card__year">CONCLUÍDO EM 2023</span>
+                <a href="#contato" class="btn btn--outline btn--xs">Ver detalhes</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal" id="projeto-vertice" data-delay="300">
+            <div class="project-card__media">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Estúdio Vértice, escritório com divisórias em vidro e paleta biofílica" loading="lazy">
+              <span class="tag">COMERCIAL</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span><i class="fa-solid fa-location-dot"></i> Belo Horizonte, MG</span><span><i class="fa-solid fa-ruler-combined"></i> 350 m²</span></div>
+              <h3 class="project-card__title">Estúdio Vértice</h3>
+              <p class="project-card__text">Ambiente de trabalho flexível com acústica otimizada, divisórias em vidro canelado e paleta biofílica revigorante.</p>
+              <div class="project-card__footer">
+                <span class="project-card__year">CONCLUÍDO EM 2024</span>
+                <a href="#contato" class="btn btn--outline btn--xs">Ver detalhes</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects__cta reveal" id="projetosCta">
+          <a href="#contato" class="btn btn--outline" id="btnPortfolio">SOLICITAR APRESENTAÇÃO COMPLETA DO PORTFÓLIO</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section about" id="sobre">
+      <div class="container about__grid">
+        <div class="about__media reveal" id="aboutMedia">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" alt="Ambiente interior elegante com iluminação natural e texturas naturais" loading="lazy">
+          <div class="about__badge" id="aboutBadge">
+            <span class="about__badge-icon"><i class="fa-solid fa-award"></i></span>
+            <div>
+              <strong>12+</strong> Anos de experiência
+              <small>Mais de 140 obras executadas com excelência</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="eyebrow reveal" id="sobreEyebrow">NOSSA FILOSOFIA</span>
+          <h2 class="section__title reveal" id="sobreTitle" data-delay="100">Arquitetura que respeita a escala do afeto e a força do detalhe.</h2>
+          <p class="reveal" id="sobreP1" data-delay="150">Fundada sob a premissa de que a boa arquitetura não impõe regras, mas acolhe histórias, a <strong>AURA Arquitetura</strong> combina rigor técnico construtivo com sensibilidade espacial contemporânea.</p>
+          <p class="reveal" id="sobreP2" data-delay="200">Acreditamos que cada linha traçada tem um propósito: otimizar o conforto térmico, orquestrar a entrada de luz natural e criar uma atmosfera de serenidade atemporal. Não perseguimos tendências passageiras; criamos espaços que envelhecem com nobreza e dignidade.</p>
+
+          <ul class="pillars" id="pillars">
+            <li class="pillar reveal" id="pilar-precisao" data-delay="0">
+              <i class="fa-solid fa-ruler-combined"></i>
+              <h3>Precisão</h3>
+              <p>Modelagem paramétrica e orçamentação transparente para evitar surpresas na obra.</p>
+            </li>
+            <li class="pillar reveal" id="pilar-sensorialidade" data-delay="120">
+              <i class="fa-solid fa-leaf"></i>
+              <h3>Sensorialidade</h3>
+              <p>Texturas naturais, ventilação cruzada e acústica tratada com carinho.</p>
+            </li>
+            <li class="pillar reveal" id="pilar-acompanhamento" data-delay="240">
+              <i class="fa-solid fa-helmet-safety"></i>
+              <h3>Acompanhamento</h3>
+              <p>Presença ativa no canteiro garantindo fidelidade total do conceito à entrega final.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section class="section process" id="processo">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow reveal" id="processoEyebrow">COMO TRABALHAMOS</span>
+          <h2 class="section__title reveal" id="processoTitle" data-delay="100">Um método claro, colaborativo e previsível</h2>
+          <p class="section__lead reveal" id="processoLead" data-delay="200">Transformar ideias em matéria exige método. Dividimos a jornada em quatro fases bem definidas para você acompanhar cada decisão com tranquilidade.</p>
+        </div>
+
+        <ol class="steps" id="steps">
+          <li class="card step reveal" id="etapa-01" data-delay="0">
+            <span class="step__num">01</span>
+            <h3 class="step__title">Imersão & Briefing</h3>
+            <p>Reuniões detalhadas para entender hábitos, orçamento, necessidades funcionais e a relação emocional com cada ambiente.</p>
+          </li>
+          <li class="card step reveal" id="etapa-02" data-delay="120">
+            <span class="step__num">02</span>
+            <h3 class="step__title">Estudo Preliminar & 3D</h3>
+            <p>Apresentação do conceito em maquetes tridimensionais, paleta de acabamentos, iluminação e layout para validação conjunta.</p>
+          </li>
+          <li class="card step reveal" id="etapa-03" data-delay="240">
+            <span class="step__num">03</span>
+            <h3 class="step__title">Projeto Executivo</h3>
+            <p>Caderno técnico detalhado: elétrica, hidráulica, paginação de pisos, detalhamento de marcenaria e especificações para compras.</p>
+          </li>
+          <li class="card step reveal" id="etapa-04" data-delay="360">
+            <span class="step__num">04</span>
+            <h3 class="step__title">Consultoria de Obra</h3>
+            <p>Visitas técnicas periódicas para orientar os empreiteiros, fiscalizar acabamentos e assegurar conformidade rigorosa.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FEEDBACK -->
+    <section class="section testimonials" id="feedback">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow reveal" id="feedbackEyebrow">A VOZ DE QUEM CONFIA</span>
+          <h2 class="section__title section__title--md reveal" id="feedbackTitle" data-delay="100">Histórias construídas a quatro mãos</h2>
+        </div>
+
+        <div class="carousel reveal" id="carousel" data-delay="150">
+          <div class="carousel__stage" id="carouselStage">
+            <figure class="testimonial is-active" id="depoimento-1">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <blockquote>“O que mais nos surpreendeu foi a capacidade de traduzir nossa rotina em espaços práticos sem abrir mão da sofisticação. A iluminação natural do living mudou completamente a qualidade de vida da nossa família.”</blockquote>
+              <figcaption>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Beatriz Mendonça" loading="lazy">
+                <div><strong>Beatriz Mendonça</strong><span>Proprietária da Residência Horizonte • São Paulo</span></div>
+              </figcaption>
+            </figure>
+            <figure class="testimonial" id="depoimento-2">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <blockquote>“A transparência no orçamento e o acompanhamento semanal da obra nos deram uma tranquilidade que nunca tivemos em reformas anteriores. O resultado superou o que imaginávamos.”</blockquote>
+              <figcaption>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Rafael Tavares" loading="lazy">
+                <div><strong>Rafael Tavares</strong><span>Proprietário do Apartamento Alameda • Curitiba</span></div>
+              </figcaption>
+            </figure>
+            <figure class="testimonial" id="depoimento-3">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <blockquote>“O novo escritório transformou o clima da equipe. A acústica, a luz e a paleta biofílica fazem as pessoas quererem estar ali, e isso aparece na produtividade.”</blockquote>
+              <figcaption>
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Marina Facchini" loading="lazy">
+                <div><strong>Marina Facchini</strong><span>Sócia do Estúdio Vértice • Belo Horizonte</span></div>
+              </figcaption>
+            </figure>
+            <figure class="testimonial" id="depoimento-3">
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <blockquote>“O novo escritório transformou o clima da equipe. A acústica, a luz e a paleta biofílica fazem as pessoas quererem estar ali, e isso aparece na produtividade.”</blockquote>
+              <figcaption>
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Marina Facchini" loading="lazy">
+                <div><strong>Marina Facchini</strong><span>Sócia do Estúdio Vértice • Belo Horizonte</span></div>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="carousel__bar">
+            <span class="carousel__count" id="carouselCount">01 / 03</span>
+            <div class="carousel__progress" id="carouselProgress"><span id="carouselProgressFill"></span></div>
+            <div class="carousel__nav">
+              <button class="icon-btn" id="carouselPrev" aria-label="Depoimento anterior"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="icon-btn" id="carouselNext" aria-label="Próximo depoimento"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contact" id="contato">
+      <div class="container contact__grid">
+        <div class="contact__info">
+          <span class="eyebrow reveal" id="contatoEyebrow">PRIMEIRO PASSO</span>
+          <h2 class="section__title reveal" id="contatoTitle" data-delay="100">Vamos desenhar o seu próximo espaço?</h2>
+          <p class="reveal" id="contatoText" data-delay="150">Preencha o formulário ao lado para compartilhar detalhes preliminares do seu projeto. Entraremos em contato em até 24 horas úteis para agendar uma conversa inicial de alinhamento.</p>
+
+          <ul class="contact__list" id="contactList">
+            <li class="contact__item reveal" id="contatoEmail" data-delay="200">
+              <span class="contact__icon"><i class="fa-regular fa-envelope"></i></span>
+              <div><small>E-MAIL DIRETO</small><a href="mailto:contato@auraarquitetura.com.br">contato@auraarquitetura.com.br</a></div>
+            </li>
+            <li class="contact__item reveal" id="contatoTelefone" data-delay="280">
+              <span class="contact__icon"><i class="fa-brands fa-whatsapp"></i></span>
+              <div><small>TELEFONE / WHATSAPP</small><a href="tel:+5511999998888">+55 (11) 99999-8888</a></div>
+            </li>
+            <li class="contact__item reveal" id="contatoEndereco" data-delay="360">
+              <span class="contact__icon"><i class="fa-solid fa-location-dot"></i></span>
+              <div><small>ESTÚDIO</small><span>Al. Gabriel Monteiro da Silva, 1420 Jardim Paulistano, SP</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="contactForm" novalidate data-delay="150">
+          <div class="field" id="field-nome">
+            <label for="nome">SEU NOME COMPLETO *</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: Carlos Albuquerque" required>
+            <small class="field__error" id="erro-nome"></small>
+          </div>
+          <div class="field" id="field-email">
+            <label for="email">E-MAIL DE CONTATO *</label>
+            <input type="email" id="email" name="email" placeholder="carlos@exemplo.com.br" required>
+            <small class="field__error" id="erro-email"></small>
+          </div>
+          <div class="field-row">
+            <div class="field" id="field-tipo">
+              <label for="tipo">TIPO DE PROJETO *</label>
+              <select id="tipo" name="tipo" required>
+                <option value="">Selecione uma categoria</option>
+                <option>Residência unifamiliar</option>
+                <option>Reforma de apartamento</option>
+                <option>Design de interiores</option>
+                <option>Ambiente corporativo</option>
+                <option>Paisagismo & biofilia</option>
+                <option>Consultoria de iluminação</option>
+              </select>
+              <small class="field__error" id="erro-tipo"></small>
+            </div>
+            <div class="field" id="field-faixa">
+              <label for="faixa">FAIXA DE INVESTIMENTO ESTIMADA *</label>
+              <select id="faixa" name="faixa" required>
+                <option value="">Selecione uma faixa</option>
+                <option>Até R$ 100 mil</option>
+                <option>R$ 100 mil a R$ 300 mil</option>
+                <option>R$ 300 mil a R$ 800 mil</option>
+                <option>Acima de R$ 800 mil</option>
+              </select>
+              <small class="field__error" id="erro-faixa"></small>
+            </div>
+          </div>
+          <div class="field" id="field-prazo">
+            <label for="prazo">PRAZO DESEJADO OU DEADLINE ESTIMADO *</label>
+            <input type="text" id="prazo" name="prazo" placeholder="Em quanto tempo gostaria de iniciar?" required>
+            <small class="field__error" id="erro-prazo"></small>
+          </div>
+          <div class="field" id="field-mensagem">
+            <label for="mensagem">CONTE-NOS SOBRE O IMÓVEL E OS SEUS OBJETIVOS *</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Localização, metragem aproximada, quantidade de cômodos ou aspectos específicos que você valoriza..." required></textarea>
+            <small class="field__error" id="erro-mensagem"></small>
+          </div>
+          <button type="submit" class="btn btn--outline btn--block" id="btnEnviar">ENVIAR SOLICITAÇÃO DE PROJETO</button>
+          <p class="form__note"><i class="fa-solid fa-lock"></i> Seus dados serão tratados com total sigilo e utilizados exclusivamente para elaborar sua proposta.</p>
+          <p class="form__success" id="formSuccess" role="status" hidden><i class="fa-solid fa-circle-check"></i> Solicitação enviada! Entraremos em contato em até 24 horas úteis.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand reveal" id="footerBrand">
+        <a href="#top" class="logo logo--light" id="footerLogo">
+          <span class="logo__mark">A</span>
+          <span class="logo__text"><strong>AURA</strong><small>ARQUITETURA</small></span>
+        </a>
+        <p>Escritório de arquitetura e design de interiores contemporâneo. Criamos espaços que equilibram rigor técnico, estética atemporal e aconchego humano.</p>
+        <small>Registro CAU/BR nº 49204-1 • CNPJ 00.000.000/0001-00</small>
+      </div>
+
+      <div class="footer__col reveal" id="footerNav" data-delay="100">
+        <h4>NAVEGAÇÃO</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#projetos">Projetos Selecionados</a></li>
+          <li><a href="#sobre">Sobre o Escritório</a></li>
+          <li><a href="#processo">Como Trabalhamos</a></li>
+          <li><a href="#feedback">Depoimentos</a></li>
+          <li><a href="#contato">Iniciar um Projeto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col reveal" id="footerSpecs" data-delay="200">
+        <h4>ESPECIALIDADES</h4>
+        <ul>
+          <li><a href="#contato">Residências Unifamiliares</a></li>
+          <li><a href="#contato">Reformas de Apartamentos</a></li>
+          <li><a href="#contato">Design de Interiores</a></li>
+          <li><a href="#contato">Ambientes Corporativos</a></li>
+          <li><a href="#contato">Paisagismo & Biofilia</a></li>
+          <li><a href="#contato">Consultoria de Iluminação</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col reveal" id="footerSocial" data-delay="300">
+        <h4>CONECTAR</h4>
+        <ul>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram <i class="fa-solid fa-arrow-up-right-from-square footer__ext"></i></a></li>
+          <li><a href="https://www.pinterest.com" target="_blank" rel="noopener"><i class="fa-brands fa-pinterest"></i> Pinterest <i class="fa-solid fa-arrow-up-right-from-square footer__ext"></i></a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn <i class="fa-solid fa-arrow-up-right-from-square footer__ext"></i></a></li>
+          <li><a href="https://wa.me/5511999998888" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direto <i class="fa-solid fa-arrow-up-right-from-square footer__ext"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 2025 AURA Arquitetura. Todos os direitos reservados.</p>
+      <div class="footer__legal">
+        <a href="#privacidade" id="linkPrivacidade">Privacidade de Dados</a>
+        <a href="#termos" id="linkTermos">Termos de Uso</a>
+        <a href="#top" id="linkTopo" class="footer__top">Voltar ao topo <i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
