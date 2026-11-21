@@ -285,7 +285,7 @@
         ['fa-location-dot', 'Local', 'São Paulo, SP'],
         ['fa-calendar', 'Ano', '2024'],
         ['fa-ruler-combined', 'Área', '480 m²'],
-        ['fa-coins', 'Investimento', 'R$ 4,2 milhões'],
+        ['fa-coins', 'Investimento', 'R$ 14.2 mil'],
         ['fa-clock', 'Prazo de obra', '18 meses']
       ],
       materials: ['Concreto aparente', 'Muxarabi de madeira', 'Vidro de alto desempenho', 'Paisagismo nativo', 'Pedra natural'],
@@ -305,7 +305,7 @@
         ['fa-location-dot', 'Local', 'Curitiba, PR'],
         ['fa-calendar', 'Ano', '2023'],
         ['fa-ruler-combined', 'Área', '210 m²'],
-        ['fa-coins', 'Investimento', 'R$ 1,1 milhão'],
+        ['fa-coins', 'Investimento', 'R$ 6 mil'],
         ['fa-clock', 'Prazo de obra', '9 meses']
       ],
       materials: ['Marcenaria sob medida', 'Carvalho natural', 'Mármore travertino', 'Iluminação indireta', 'Texturas em linho'],
@@ -325,7 +325,7 @@
         ['fa-location-dot', 'Local', 'Belo Horizonte, MG'],
         ['fa-calendar', 'Ano', '2024'],
         ['fa-ruler-combined', 'Área', '350 m²'],
-        ['fa-coins', 'Investimento', 'R$ 1,8 milhão'],
+        ['fa-coins', 'Investimento', 'R$ 18 mil'],
         ['fa-clock', 'Prazo de obra', '11 meses']
       ],
       materials: ['Vidro canelado', 'Painéis acústicos', 'Vegetação interna', 'Madeira clara', 'Piso vinílico'],
