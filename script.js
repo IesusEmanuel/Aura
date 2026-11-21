@@ -217,11 +217,14 @@
   const DURATION = 7000;
   let current = 0, startTime = performance.now(), rafId;
 
+  function updateCount() {
+    count.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+  }
   function goTo(i) {
     slides[current].classList.remove('is-active');
     current = (i + slides.length) % slides.length;
     slides[current].classList.add('is-active');
-    count.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    updateCount();
     startTime = performance.now();
   }
   function tick(now) {
@@ -230,6 +233,7 @@
     if (p >= 1) goTo(current + 1);
     rafId = requestAnimationFrame(tick);
   }
+  updateCount();
   count.textContent = `01 / ${String(slides.length).padStart(2, '0')}`;
   rafId = requestAnimationFrame(tick);
   prev.addEventListener('click', () => goTo(current - 1));
@@ -267,6 +271,210 @@
     form.reset();
     success.hidden = false;
     success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  /* ---------- 7.1 Modal de detalhes dos projetos (blur no fundo + expansão do card) ---------- */
+  // Dados ilustrativos: substitua por clientes, valores e fotos reais da AURA.
+  const U = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1100&q=80`;
+  const PROJECTS = {
+    horizonte: {
+      tag: 'RESIDENCIAL', title: 'Casa Horizonte', year: '2024', tipo: 'Residência unifamiliar',
+      lead: 'Uma residência pensada para dissolver a fronteira entre dentro e fora. O concreto aparente dá peso e permanência, enquanto os muxarabis de madeira filtram a luz e criam sombras que mudam ao longo do dia. O paisagismo nativo entra pela casa e conduz a circulação entre os ambientes.',
+      facts: [
+        ['fa-user', 'Cliente', 'Família Mendonça'],
+        ['fa-location-dot', 'Local', 'São Paulo, SP'],
+        ['fa-calendar', 'Ano', '2024'],
+        ['fa-ruler-combined', 'Área', '480 m²'],
+        ['fa-coins', 'Investimento', 'R$ 4,2 milhões'],
+        ['fa-clock', 'Prazo de obra', '18 meses']
+      ],
+      materials: ['Concreto aparente', 'Muxarabi de madeira', 'Vidro de alto desempenho', 'Paisagismo nativo', 'Pedra natural'],
+      images: [U('1600596542815-ffad4c1539a9'), U('1600585154340-be6161a56a0c'), U('1600210492486-724fe5c67fb0'), U('1613490493576-7fde63acd811')],
+      process: [
+        ['Imersão & Briefing', 'Mapeamos a rotina da família, o terreno e a insolação ao longo do ano.', '3 semanas'],
+        ['Estudo Preliminar & 3D', 'Maquetes de volumetria, estudo de sombras e paleta de materiais.', '2 meses'],
+        ['Projeto Executivo', 'Caderno técnico completo, incluindo marcenaria e paisagismo.', '4 meses'],
+        ['Consultoria de Obra', 'Visitas semanais e controle de qualidade dos acabamentos.', '18 meses']
+      ]
+    },
+    alameda: {
+      tag: 'INTERIORES', title: 'Apartamento Alameda', year: '2023', tipo: 'Reforma de apartamento',
+      lead: 'A reforma derrubou paredes que fragmentavam o apartamento e reorganizou a planta a partir da luz natural. A cozinha gourmet passou a conversar com o living, e a marcenaria sob medida esconde o que precisa ser escondido e valoriza o que merece destaque.',
+      facts: [
+        ['fa-user', 'Cliente', 'Rafael Tavares'],
+        ['fa-location-dot', 'Local', 'Curitiba, PR'],
+        ['fa-calendar', 'Ano', '2023'],
+        ['fa-ruler-combined', 'Área', '210 m²'],
+        ['fa-coins', 'Investimento', 'R$ 1,1 milhão'],
+        ['fa-clock', 'Prazo de obra', '9 meses']
+      ],
+      materials: ['Marcenaria sob medida', 'Carvalho natural', 'Mármore travertino', 'Iluminação indireta', 'Texturas em linho'],
+      images: [U('1618221195710-dd6b41faaea6'), U('1616594039964-ae9021a400a0'), U('1556909114-f6e7ad7d3136'), U('1600607687939-ce8a6c25118c')],
+      process: [
+        ['Imersão & Briefing', 'Levantamento das necessidades funcionais e do acervo do cliente.', '2 semanas'],
+        ['Estudo Preliminar & 3D', 'Três propostas de layout e simulações de iluminação natural.', '6 semanas'],
+        ['Projeto Executivo', 'Detalhamento de marcenaria, elétrica e paginação de pisos.', '3 meses'],
+        ['Consultoria de Obra', 'Acompanhamento técnico e compatibilização com os fornecedores.', '9 meses']
+      ]
+    },
+    vertice: {
+      tag: 'COMERCIAL', title: 'Estúdio Vértice', year: '2024', tipo: 'Ambiente corporativo',
+      lead: 'Um escritório pensado para mudar de configuração com a equipe. A acústica foi tratada em camadas, as divisórias em vidro canelado preservam a privacidade sem escurecer o ambiente, e a paleta biofílica traz presença de natureza para a rotina de trabalho.',
+      facts: [
+        ['fa-user', 'Cliente', 'Estúdio Vértice'],
+        ['fa-location-dot', 'Local', 'Belo Horizonte, MG'],
+        ['fa-calendar', 'Ano', '2024'],
+        ['fa-ruler-combined', 'Área', '350 m²'],
+        ['fa-coins', 'Investimento', 'R$ 1,8 milhão'],
+        ['fa-clock', 'Prazo de obra', '11 meses']
+      ],
+      materials: ['Vidro canelado', 'Painéis acústicos', 'Vegetação interna', 'Madeira clara', 'Piso vinílico'],
+      images: [U('1497366216548-37526070297c'), U('1497366811353-6870744d04b2'), U('1524758631624-e2822e304c36'), U('1497215728101-856f4ea42174')],
+      process: [
+        ['Imersão & Briefing', 'Entrevistas com a equipe para entender fluxos, rituais e picos de uso.', '2 semanas'],
+        ['Estudo Preliminar & 3D', 'Layouts flexíveis, estudo acústico e paleta biofílica.', '5 semanas'],
+        ['Projeto Executivo', 'Especificação de divisórias, forros acústicos e infraestrutura.', '3 meses'],
+        ['Consultoria de Obra', 'Obra faseada para a equipe continuar operando durante a entrega.', '11 meses']
+      ]
+    }
+  };
+
+  const modal = document.getElementById('projectModal');
+  const modalPanel = document.getElementById('modalPanel');
+  const modalScroll = document.getElementById('modalScroll');
+  const modalBody = document.getElementById('modalBody');
+  const modalClose = document.getElementById('modalClose');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const pageParts = document.querySelectorAll('header, main, footer');
+  let modalTrigger = null, modalCloseTimer = null, modalOpen = false;
+
+  function renderProject(p) {
+    const facts = p.facts.map(([icon, label, value]) =>
+      `<div class="pm__fact"><dt><i class="fa-solid ${icon}"></i>${label}</dt><dd>${value}</dd></div>`).join('');
+    const chips = p.materials.map((m) => `<li>${m}</li>`).join('');
+    const thumbs = p.images.map((src, i) =>
+      `<button type="button" class="pm__thumb${i === 0 ? ' is-active' : ''}" data-src="${src}" data-index="${i + 1}" aria-label="Ver imagem ${i + 1} de ${p.images.length}"><img src="${src}" alt="" loading="lazy"></button>`).join('');
+    const steps = p.process.map(([title, text, time], i) =>
+      `<li class="pm__step"><span class="pm__step-num">0${i + 1}</span><h4>${title}</h4><p>${text}</p><small><i class="fa-regular fa-clock"></i> ${time}</small></li>`).join('');
+
+    return `
+      <div class="pm">
+        <div class="pm__gallery">
+          <div class="pm__main"><img id="pmMainImg" src="${p.images[0]}" alt="${p.title}, imagem 1"><span class="tag">${p.tag}</span></div>
+          <div class="pm__thumbs" id="pmThumbs">${thumbs}</div>
+        </div>
+        <div class="pm__info">
+          <span class="eyebrow">${p.tag} • ${p.year}</span>
+          <h2 class="pm__title" id="modalTitle">${p.title}</h2>
+          <p class="pm__lead">${p.lead}</p>
+          <dl class="pm__facts">${facts}</dl>
+          <h3 class="pm__sub">Materiais e acabamentos</h3>
+          <ul class="pm__chips">${chips}</ul>
+        </div>
+        <div class="pm__process">
+          <h3 class="pm__sub">Processo do projeto</h3>
+          <ol class="pm__steps">${steps}</ol>
+        </div>
+        <div class="pm__cta">
+          <p>Quer um projeto como este?</p>
+          <button type="button" class="btn btn--dark" id="modalCta" data-tipo="${p.tipo}">QUERO UM PROJETO ASSIM</button>
+        </div>
+      </div>`;
+  }
+
+  // Posiciona o painel exatamente sobre o card (efeito de expansão do card para o modal)
+  function placePanelOver(card) {
+    const c = card.getBoundingClientRect();
+    const p = modalPanel.getBoundingClientRect();
+    modalPanel.style.transform = `translate(${c.left - p.left}px, ${c.top - p.top}px) scale(${c.width / p.width}, ${c.height / p.height})`;
+    modalPanel.style.opacity = '0';
+  }
+
+  function openProject(key, trigger) {
+    const data = PROJECTS[key];
+    if (!data || modalOpen) return;
+    clearTimeout(modalCloseTimer);
+    modalOpen = true;
+    modalTrigger = trigger;
+
+    modalBody.innerHTML = renderProject(data);
+    modalBody.querySelectorAll('img').forEach((img) => img.addEventListener('error', () => {
+      if (img.dataset.fallback) return;
+      img.dataset.fallback = '1';
+      img.src = `https://picsum.photos/seed/${encodeURIComponent(data.title + Math.random())}/1000/800`;
+    }));
+    modalScroll.scrollTop = 0;
+
+    modal.classList.add('is-visible');
+    modal.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('modal-open');
+    pageParts.forEach((el) => { el.inert = true; });
+
+    const card = trigger.closest('.project-card');
+    if (!reduceMotion && card) {
+      modalPanel.style.transition = 'none';
+      placePanelOver(card);
+      void modalPanel.offsetWidth;              // força o reflow antes de animar
+      modalPanel.style.transition = '';
+    }
+    requestAnimationFrame(() => {
+      modalPanel.style.transform = '';
+      modalPanel.style.opacity = '';
+      modal.classList.add('is-open');
+      modalClose.focus({ preventScroll: true });
+    });
+  }
+
+  function closeProject(afterClose) {
+    if (!modalOpen) return;
+    modalOpen = false;
+    modal.classList.remove('is-open');
+
+    const card = modalTrigger && modalTrigger.closest('.project-card');
+    if (!reduceMotion && card) placePanelOver(card);
+
+    modalCloseTimer = setTimeout(() => {
+      modal.classList.remove('is-visible');
+      modal.setAttribute('aria-hidden', 'true');
+      modalPanel.style.transform = '';
+      modalPanel.style.opacity = '';
+      modalBody.innerHTML = '';
+      document.documentElement.classList.remove('modal-open');
+      pageParts.forEach((el) => { el.inert = false; });
+      if (modalTrigger) modalTrigger.focus({ preventScroll: true });
+      if (typeof afterClose === 'function') afterClose();
+    }, reduceMotion ? 0 : 600);
+  }
+
+  document.querySelectorAll('[data-project]').forEach((btn) =>
+    btn.addEventListener('click', () => openProject(btn.dataset.project, btn)));
+  modalClose.addEventListener('click', () => closeProject());
+  modalBackdrop.addEventListener('click', () => closeProject());
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeProject(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalOpen) closeProject(); });
+
+  // Troca de imagem na galeria e botão de contato (delegação de eventos)
+  modalBody.addEventListener('click', (e) => {
+    const thumb = e.target.closest('.pm__thumb');
+    if (thumb) {
+      const main = document.getElementById('pmMainImg');
+      modalBody.querySelectorAll('.pm__thumb').forEach((t) => t.classList.toggle('is-active', t === thumb));
+      main.classList.add('is-swapping');
+      setTimeout(() => {
+        main.src = thumb.dataset.src;
+        main.alt = `Imagem ${thumb.dataset.index}`;
+        main.classList.remove('is-swapping');
+      }, 280);
+      return;
+    }
+    const cta = e.target.closest('#modalCta');
+    if (cta) {
+      const tipo = cta.dataset.tipo;
+      closeProject(() => {
+        form.elements.tipo.value = tipo;
+        document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
   });
 
   /* ---------- 8. Fallback de imagens quebradas ---------- */

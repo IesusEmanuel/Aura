@@ -10,8 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-
-  <link rel="icon" type="image/x-icon" href="img/icon.png">
 </head>
 <body id="top">
 
@@ -23,9 +21,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#top" class="logo" id="logo" aria-label="AURA Arquitetura - início">
-        <span class="logo__text">
-          <img src="img/logo.png" alt="AURA Arquitetura" width="182" height="auto">
-        </span>
+        <img src="img/logo.png" alt="Logotipo da AURA Arquitetura" width="180" height="auto">
       </a>
 
       <nav class="nav" id="nav" aria-label="Navegação principal">
@@ -111,7 +107,7 @@
               <p class="project-card__text">Integração total entre interior e paisagismo nativo com elementos de concreto aparente e muxarabis de madeira.</p>
               <div class="project-card__footer">
                 <span class="project-card__year">CONCLUÍDO EM 2024</span>
-                <a href="#contato" class="btn btn--outline btn--xs">Ver detalhes</a>
+                <button type="button" class="btn btn--outline btn--xs" id="btnDetalhesHorizonte" data-project="horizonte" aria-haspopup="dialog">Ver detalhes</button>
               </div>
             </div>
           </article>
@@ -127,7 +123,7 @@
               <p class="project-card__text">Reconfiguração espacial completa valorizando a iluminação natural e fluidez entre cozinha gourmet e living.</p>
               <div class="project-card__footer">
                 <span class="project-card__year">CONCLUÍDO EM 2023</span>
-                <a href="#contato" class="btn btn--outline btn--xs">Ver detalhes</a>
+                <button type="button" class="btn btn--outline btn--xs" id="btnDetalhesAlameda" data-project="alameda" aria-haspopup="dialog">Ver detalhes</button>
               </div>
             </div>
           </article>
@@ -143,7 +139,7 @@
               <p class="project-card__text">Ambiente de trabalho flexível com acústica otimizada, divisórias em vidro canelado e paleta biofílica revigorante.</p>
               <div class="project-card__footer">
                 <span class="project-card__year">CONCLUÍDO EM 2024</span>
-                <a href="#contato" class="btn btn--outline btn--xs">Ver detalhes</a>
+                <button type="button" class="btn btn--outline btn--xs" id="btnDetalhesVertice" data-project="vertice" aria-haspopup="dialog">Ver detalhes</button>
               </div>
             </div>
           </article>
@@ -265,13 +261,13 @@
               </figcaption>
             </figure>
             <figure class="testimonial" id="depoimento-3">
-              <div class="stars" aria-label="4 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <blockquote>“Depois da mudança, o escritório ficou mais confortável e convidativo. A equipe aproveita melhor os espaços, e a luz natural trouxe uma energia nova para o dia a dia”</blockquote>
+              <div class="stars" aria-label="5 estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <blockquote>“O novo escritório transformou o clima da equipe. A acústica, a luz e a paleta biofílica fazem as pessoas quererem estar ali, e isso aparece na produtividade.”</blockquote>
               <figcaption>
-                <img src="https://images.unsplash.com/photo-1772989665252-7cb41ae759cc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Julia Figueiredo" loading="lazy">
-                <div><strong>Julia Figueiredo</strong><span>Sócia Majoritártia do Estúdio Illa • Belo Oriente</span></div>
+                <img src="https://images.unsplash.com/photo-1781888681811-332968760c2a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Julia Figueiredo" loading="lazy">
+                <div><strong>Julia Figueiredo</strong><span>Sócia Majoritária do Estudio EIS • Criciúma</span></div>
               </figcaption>
-            </figure>   
+            </figure>
           </div>
 
           <div class="carousel__bar">
@@ -339,16 +335,16 @@
               <label for="faixa">FAIXA DE INVESTIMENTO ESTIMADA *</label>
               <select id="faixa" name="faixa" required>
                 <option value="">Selecione uma faixa</option>
-                <option>Até R$1.600,00</option>
-                <option>R$ 1.600,00 - R$ 3.000,00</option>
-                <option>R$ 3.000,00 - R$ 8.000,00</option>
-                <option>Acima de R$ 8.000,00</option>
+                <option>Até R$ 100 mil</option>
+                <option>R$ 100 mil a R$ 300 mil</option>
+                <option>R$ 300 mil a R$ 800 mil</option>
+                <option>Acima de R$ 800 mil</option>
               </select>
               <small class="field__error" id="erro-faixa"></small>
             </div>
           </div>
           <div class="field" id="field-prazo">
-            <label for="prazo">PRAZO DESEJADO OU DEADLINE ESTIMADO ( EM DIAS )*</label>
+            <label for="prazo">PRAZO DESEJADO OU DEADLINE ESTIMADO *</label>
             <input type="text" id="prazo" name="prazo" placeholder="Em quanto tempo gostaria de iniciar?" required>
             <small class="field__error" id="erro-prazo"></small>
           </div>
@@ -370,7 +366,8 @@
     <div class="container footer__grid">
       <div class="footer__brand reveal" id="footerBrand">
         <a href="#top" class="logo logo--light" id="footerLogo">
-          <img src="img/logo_white.png" alt="AURA Arquitetura" width="182" height="auto">
+          <span class="logo__mark">A</span>
+          <span class="logo__text"><strong>AURA</strong><small>ARQUITETURA</small></span>
         </a>
         <p>Escritório de arquitetura e design de interiores contemporâneo. Criamos espaços que equilibram rigor técnico, estética atemporal e aconchego humano.</p>
         <small>Registro CAU/BR nº 49204-1 • CNPJ 00.000.000/0001-00</small>
@@ -420,6 +417,17 @@
       </div>
     </div>
   </footer>
+
+  <!-- MODAL DE DETALHES DO PROJETO (conteúdo gerado em script.js) -->
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__panel" id="modalPanel">
+      <button type="button" class="modal__close" id="modalClose" aria-label="Fechar detalhes do projeto"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal__scroll" id="modalScroll">
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
